@@ -69,6 +69,11 @@ pageClass: routes
 <Route author="mjysci" example="/apnews/topics/ap-top-news" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`']"  anticrawler="1"/>
 采用了 `puppeteer` 规避 `Project Shield`，无全文抓取，建议自建。
 
+### 板块
+
+<Route author="mkmark" example="/apnews/world-news" path="/apnews/hub/:section" :paramsDesc="['板块名称，可在 URL 中找到，例如 world-news [https://apnews.com/hub/world-news](https://apnews.com/hub/world-news) 的板块为 `world-news`']"  anticrawler="1"/>
+采用了 `puppeteer` 规避 `Project Shield`，需要点击链接获取全文，需要自建。
+
 ## BBC
 
 ### BBC 英文
@@ -256,6 +261,13 @@ pageClass: routes
 
 <Route author="oppliate" example="/phoronix/news_topic/Intel" path="/phoronix/:page/:queryOrItem?" :paramsDesc="['页面', '对 `category` 页面是分类项目 `item`，对其它页面是主题 `q`，可以在网站顶部导航栏各项目链接里找出。如 `https://www.phoronix.com/scan.php?page=category&item=Computers` 对应 `/phoronix/category/Computers`']" />
 
+## Reuters
+
+### 板块
+
+<Route author="mkmark" example="/reuters/world" path="/reuters/:section" :paramsDesc="['板块名称，可在 URL 中找到，例如 world [https://www.reuters.com/world/](https://www.reuters.com/world/) 的板块为 `world`']"  anticrawler="1"/>
+采用了 `puppeteer` 规避 `Project Shield`，需要点击链接获取全文。仅有标题，无描述。
+
 ## RTHK 傳媒透視
 
 <Route author="tpnonthealps" example="/mediadigest/latest" path="/mediadigest/:range" :paramsDesc="['时间范围']">
@@ -351,7 +363,7 @@ Solidot 提供的 feed:
 
 ### TASS
 
-<Route author="mkmark" example="/tass/en/all" path="/tass/:language/:section" radar="1" :paramsDesc="['语言，可选`en`或`ru`', '板块，见下']"/></Route>
+<Route author="mkmark" example="/tass/en/all" path="/tass/:language/:section" radar="1" :paramsDesc="['语言，可选`en`或`ru`', '板块，见下']" anticrawler="1"/></Route>
 
 英文可选板块如下
 
